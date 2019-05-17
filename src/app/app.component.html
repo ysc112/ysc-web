@@ -1,0 +1,48 @@
+
+
+<div><nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" [routerLink]="['login']">
+    <img src="http://img17.3lian.com/d/file/201702/16/c739f33257cb00cc209b533fdfebe85d.jpg"
+      style="width:50px;height:47px;border-radius: 50%;">
+  </a>
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+      <a class="nav-link" [routerLink]="['login']">登陆</a>
+      <a class="nav-link" [routerLink]="['home']">主页</a>
+      <a class="nav-link" [routerLink]="['about']">关于</a>
+      <a class="nav-link" (click)="LoginOut()" *ngIf=this.auth.isLoggedIn() style="position:absolute; right:10px;">退出</a>
+      <a class="nav-link"  style="position: absolute ;right: 50px" *ngIf="auth.isLoggedIn()">欢迎你,{{auth.userName}}</a>
+  </ul>
+</nav>
+</div>
+
+
+
+
+    <!--h1></h1>
+    <div class="card">
+
+      <div class="card-header" style="text-align:center;background-color: aqua">
+        <h6>登陆界面</h6>
+      </div>
+      <div class="card-body">
+        <app-login-f></app-login-f>
+      </div>
+      <div class="card-footer" style="text-align:right;font-size:10px;background-color: aqua">本界面仅供练习</div>
+      
+    </div-->
+
+
+    <router-outlet></router-outlet>
+
+    <!--div class="row">
+      <div class="col-md-4">
+    
+      </div>
+      <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
+  </div>
+</div-->

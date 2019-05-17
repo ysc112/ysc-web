@@ -1,0 +1,36 @@
+<div class="col-md-9">
+  <p>
+    <button class="1" (click)="All_sub_sort()"> All_sub_{{Show}}</button>
+    <button class="2" (click)="only_male()"> Only_{{Showmale}}</button>
+  </p>
+</div>
+
+<div class="list-group-item actives">
+  <table>
+    <thead>
+      <tr>
+        <td>班级 </td>
+        <td>学生 </td>
+        <td>性别 </td>
+        <td>科目</td>
+        <td>分数</td>
+      </tr>
+      <tr *ngFor="let s of students">
+        <td *ngIf="s.gender ==Showmale||s.classes==Show ||s.subject ==Course">{{s.classes}} </td>
+        <td *ngIf="s.gender ==Showmale||s.classes==Show ||s.subject ==Course">{{s.name}}</td>
+        <td *ngIf="s.gender ==Showmale||s.classes==Show ||s.subject ==Course">{{s.gender}}</td>
+        <td *ngIf="s.gender ==Showmale||s.classes==Show ||s.subject ==Course">{{s.subject}}</td>
+        <td *ngIf="s.gender ==Showmale||s.classes==Show ||s.subject ==Course"
+          [ngStyle]="{'background-color':s.Fraction>90 ?'green' :(s.Fraction<60 ?'red': '')}">{{s.Fraction}} </td>
+      </tr>
+       <tr *ngFor="let s of students">
+        <td *ngIf="s.subject ==Course">{{s.classes}} </td>
+        <td *ngIf="s.subject ==Course">{{s.name}}</td>
+        <td *ngIf="s.subject ==Course">{{s.gender}}</td>
+        <td *ngIf="s.subject ==Course">{{s.subject}}</td>
+        <td *ngIf="s.subject ==Course"
+          [ngStyle]="{'background-color':s.Fraction>90 ?'green' :(s.Fraction<60 ?'red': 'aqua')}">{{s.Fraction}} </td>
+      </tr>
+    </thead>
+  </table>
+</div>

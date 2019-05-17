@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie-edge">
+  <title>测试回调</title>
+  <script>
+      function onTimeOut(){
+        let pInfo =document.querySelector('#info');
+       pInfo.innerHTML='超时'; 
+      }
+  function init(){
+      let btn  = document.querySelector('#btn1');
+      if(btn !=null) {
+          console.log(btn);
+      }
+btn.addEventListener('click',function(){
+    let pInfo =document.querySelector('#info');
+    pInfo.innerHTML='点击';
+    setTimeout(onTimeOut,3000);
+});
+  }
+  window.onload = init; 
+      </script>
+</head>
+
+<body>
+    <p id='info'></p>
+    <button id='btn1'>回调测试</button>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<div class="col-md-9">
+<body style="width:400px;">
+<h2>信息查询</h2>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" [class.error]="!myForm.valid && myForm.dirty"
+      style="border:1px solid rgb(87, 226, 231);padding:50px;border-radius: 5px;background-color: rgb(247, 247, 247);">
+      <div class="form-group">
+        <label for="classname">班级</label>
+        <input type="classname" class="form-control" id="classnameInput" placeholder="Enter classname" name="classname"
+        [formControl]="myForm.controls['username']">
+      </div>
+      <div class="form-group">
+          <label for="name">姓名</label>
+          <input type="name" class="form-control" id="nameInput" placeholder="Enter name" name="name"
+          [formControl]="myForm.controls['name']">
+        </div>
+        <div class="form-group">
+            <label for="sexy">性别</label>
+            <input type="sexy" class="form-control" id="sexyInput" placeholder="Enter sexy" name="sexy"
+            [formControl]="myForm.controls['sexy']">
+          </div>
+          <div class="form-group">
+              <label for="subject">科目</label>
+              <input type="subject" class="form-control" id="subjectInput" placeholder="Enter subject" name="subject"
+              [formControl]="myForm.controls['subject']">
+            </div>
+            <div class="form-group">
+                <label for="fenshu">分数</label>
+                <input type="fenshu" class="form-control" id="fenshuInput" placeholder="Enter fenshu" name="fenshu"
+                [formControl]="myForm.controls['fenshu']">
+              </div>
+              <button type="submit" class="btn btn-primary"
+              style="background:rgb(226, 231, 231);width: 120px;color: black">提交</button>
+              </form>
+</body>
+</div>

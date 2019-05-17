@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>界面</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+  <style>
+    input:hover {
+      background-color: rgb(172, 230, 217)
+    }
+  </style>
+</head>
+<body style="width:400px;margin-left:450px;">
+  <p style="margin-top:10px;"></p>
+    <h2>登录界面</h2>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" [class.error]="!myForm.valid && myForm.dirty"
+      style="border:1px solid rgb(87, 226, 231);padding:50px;border-radius: 5px;background-color: rgb(247, 247, 247);">
+      <div class="form-group">
+        <label for="username">用户名</label>
+        <input type="username" class="form-control" id="usernameInput" placeholder="Enter username" name="username"
+          [formControl]="myForm.controls['username']">
+      </div>
+      <p class="alert alert-danger" *ngIf="!username.valid">
+        请输入用户名
+      </p>
+      <div class="form-group">
+        <label for="pwd">密码:</label>
+        <input type="password" class="form-control" id="passwordInput" placeholder="Enter password" name="password"
+          [formControl]="myForm.controls['password']" ngModel minlength="6">
+      </div>
+      <p class="alert alert-danger" *ngIf="password.invalid && (password.errors.min || password.errors.max)">
+        验证码长度不少于6位不大于10位</p>
+      <p class="alert alert-danger" *ngIf="password.invalid ">
+        请输入密码</p>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox"> 记住密码
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary"
+        style="background:rgb(226, 231, 231);width: 120px;color: black">登录</button>
+    </form>
+</body>
+</html>
